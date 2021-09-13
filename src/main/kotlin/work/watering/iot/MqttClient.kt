@@ -15,12 +15,12 @@ class MqttClient(
 ): AutoCloseable {
     var isConnected: Boolean = false
 
-    fun connect(): CompletableFuture<Boolean> {
-        return this.mqttClientConnection.connect().also { this.isConnected = true }
+    fun connect() {
+        this.mqttClientConnection.connect().get().also { this.isConnected = true }
     }
 
-    fun disconnect(): CompletableFuture<Void> {
-        return this.mqttClientConnection.disconnect().also { this.isConnected = false }
+    fun disconnect() {
+        this.mqttClientConnection.disconnect().get().also { this.isConnected = false }
     }
 
     fun getConnection(): MqttClientConnection {
