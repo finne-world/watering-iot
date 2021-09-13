@@ -41,7 +41,7 @@ class Main {
             SampleMessage(
                 deviceSerial = UUID.randomUUID(),
                 amount = 1000,
-                timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"))
+                timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME)
             )
         )
     }
