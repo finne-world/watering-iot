@@ -14,4 +14,5 @@ dependencies {
     implementation(aWSIoTDeviceSDK)
     implementation(jacksonModule)
     implementation(jacksonDatatypeJdk8)
+    implementation(jacksonDatatypeJsr310)
 }
