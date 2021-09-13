@@ -5,7 +5,6 @@ import software.amazon.awssdk.crt.io.EventLoopGroup
 import software.amazon.awssdk.crt.io.HostResolver
 import software.amazon.awssdk.crt.mqtt.MqttClientConnection
 import software.amazon.awssdk.iot.AwsIotMqttConnectionBuilder
-import java.util.concurrent.CompletableFuture
 
 class MqttClient(
     private val eventLoopGroup: EventLoopGroup,
