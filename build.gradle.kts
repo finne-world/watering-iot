@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation(kotlinStdlibJdk8)
-    implementation(AWSIoTDeviceSDK)
-    implementation(JacksonModule)
+    implementation(aWSIoTDeviceSDK)
+    implementation(jacksonModule)
+    implementation(jacksonDatatypeJdk8)
 }
