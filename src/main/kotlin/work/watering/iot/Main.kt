@@ -39,7 +39,7 @@ class Main {
 
         this.publisher.publish(
             SampleMessage(
-                deviceSerial = UUID.randomUUID(),
+                serial = UUID.randomUUID(),
                 amount = 1000,
                 timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME)
             )
