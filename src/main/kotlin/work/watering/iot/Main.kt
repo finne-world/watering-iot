@@ -20,10 +20,10 @@ class Main {
     init {
         MqttClient.Builder(
             clientId = "client_id",
-            endpoint = "a2hasg13ybb0qa-ats.iot.ap-northeast-1.amazonaws.com",
-            certPath = "cert/65556c5c050dc1f2de95c9e6ce21c9b8b77e8738d15411db00c30784e496712c-certificate.pem.crt",
-            keyPath = "cert/65556c5c050dc1f2de95c9e6ce21c9b8b77e8738d15411db00c30784e496712c-private.pem.key",
-            rootCaPath = "cert/AmazonRootCA1.pem"
+            endpoint = "./src/main/resources/cert/a2hasg13ybb0qa-ats.iot.ap-northeast-1.amazonaws.com",
+            certPath = "./src/main/resources/cert/cert/65556c5c050dc1f2de95c9e6ce21c9b8b77e8738d15411db00c30784e496712c-certificate.pem.crt",
+            keyPath = "./src/main/resources/cert/cert/65556c5c050dc1f2de95c9e6ce21c9b8b77e8738d15411db00c30784e496712c-private.pem.key",
+            rootCaPath = "./src/main/resources/cert/cert/AmazonRootCA1.pem"
         )
         .build()
         .also {
