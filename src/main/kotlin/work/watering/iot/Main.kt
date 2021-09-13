@@ -35,6 +35,8 @@ class Main {
     }
 
     fun start() {
+        this.mqttClient.connect()
+        
         this.publisher.publish(
             SampleMessage(
                 deviceSerial = UUID.randomUUID(),
