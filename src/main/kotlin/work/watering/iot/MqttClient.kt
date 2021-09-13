@@ -39,7 +39,8 @@ class MqttClient(
         private val clientId: String,
         private val endpoint: String,
         private val certPath: String,
-        private val keyPath: String
+        private val keyPath: String,
+        private val rootCaPath: String
     ) {
         private var cleanSession: Boolean = true
         private var protocolOperationTimeoutMs: Int = 60000
@@ -55,6 +56,7 @@ class MqttClient(
                 it.withEndpoint(this.endpoint)
                 it.withCleanSession(this.cleanSession)
                 it.withProtocolOperationTimeoutMs(this.protocolOperationTimeoutMs)
+                it.withCertificateAuthorityFromPath(null, rootCaPath)
             }
             .build()
             .also {
