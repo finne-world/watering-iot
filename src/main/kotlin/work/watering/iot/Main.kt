@@ -2,6 +2,7 @@ package work.watering.iot
 
 import work.watering.iot.message.SampleMessage
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.UUID
 
 fun main() {
@@ -38,7 +39,7 @@ class Main {
             SampleMessage(
                 deviceSerial = UUID.randomUUID(),
                 amount = 1000,
-                timestamp = LocalDateTime.now()
+                timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"))
             )
         )
     }
