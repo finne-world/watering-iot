@@ -2,8 +2,8 @@ package work.watering.iot.message
 
 import java.util.UUID
 
-data class SampleMessage(
+data class WateringHistoryMessage(
     val serial: UUID,
-    val amount: Int,
-    val timestamp: String
+    val timestamp: String,
+    val amount: Int
 )

@@ -3,3 +3,4 @@ const val aWSIoTDeviceSDK: String = "software.amazon.awssdk.iotdevicesdk:aws-iot
 const val jacksonModule: String = "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
 const val jacksonDatatypeJdk8: String = "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.12.5"
 const val jacksonDatatypeJsr310: String = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.5"
+const val pi4j: String = "com.pi4j:pi4j-core:1.4"

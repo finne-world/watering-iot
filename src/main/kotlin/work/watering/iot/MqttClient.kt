@@ -43,7 +43,7 @@ class MqttClient(
     ) {
         private var cleanSession: Boolean = true
         private var protocolOperationTimeoutMs: Int = 60000
-        private var threadsNum: Int = 1
+        private var threadsNum: Int = 5
 
         fun build(): MqttClient {
             val eventLoopGroup: EventLoopGroup = EventLoopGroup(this.threadsNum)
