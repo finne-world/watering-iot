@@ -9,17 +9,17 @@ import java.util.UUID
 
 
 class WateringSensor (
-    var amount: Int,//後で消す
-    publisher: Publisher
-): Sensor(publisher = publisher) {
-    var gpio: GpioController = GpioFactory.getInstance();
-    var pin: GpioPinDigitalOutput = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "pomp", PinState.LOW)
+    private var amount: Int,//後で消す
+    override val publisher: Publisher
+): Sensor {
+    override val gpio: GpioController = GpioFactory.getInstance()
+    override var pin: GpioPinDigitalOutput = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "pomp", PinState.LOW)
 
     override fun getData(){
-        //GPIOからamountデータを取得する
+        //GPIOから水量を計算する
     }
 
-    fun watering(amount: Int = 100) {
+    fun watering() {
         //水やりする
         pin.setShutdownOptions(true, PinState.LOW)
         pin.high()
@@ -37,7 +37,7 @@ class WateringSensor (
         )
     }
     fun run() {
-        watering(amount)
+        watering()
         publishData()
     }
 }

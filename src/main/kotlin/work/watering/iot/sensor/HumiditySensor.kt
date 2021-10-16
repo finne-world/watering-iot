@@ -1,5 +1,6 @@
 package work.watering.iot.sensor
 
+import com.pi4j.io.gpio.*
 import work.watering.iot.Publisher
 import work.watering.iot.message.HumidityHistoryMessage
 import java.time.LocalDateTime
@@ -8,8 +9,12 @@ import java.util.UUID
 
 class HumiditySensor(
     private var humidity: Float,//後で消す
-    publisher: Publisher
-): Sensor(publisher = publisher) {
+    override val publisher: Publisher
+): Sensor {
+    override val gpio: GpioController = GpioFactory.getInstance()
+
+    //TODO 土壌湿度センサーを後で指定
+    override var pin: GpioPinDigitalOutput = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, PinState.LOW)
     override fun getData(){
         //GPIOからhumidityデータを取得する
     }
