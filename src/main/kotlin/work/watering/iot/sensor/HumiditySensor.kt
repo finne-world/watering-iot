@@ -14,7 +14,7 @@ class HumiditySensor(
     override val gpio: GpioController = GpioFactory.getInstance()
 
     //TODO 土壌湿度センサーを後で指定
-    override var pin: GpioPinDigitalOutput = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, PinState.LOW)
+    override var pin: GpioPinDigitalOutput = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, PinState.LOW)
     override fun getData(){
         //GPIOからhumidityデータを取得する
     }
